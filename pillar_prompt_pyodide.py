@@ -1,6 +1,3 @@
-# Comprehensive Pillar Post Prompt
-
-
 def get_filled_prompt_template(
         topic,
         client_name,
@@ -102,3 +99,11 @@ def get_filled_prompt_template(
     """
 
     return template
+
+
+form_input = _input.all().to_py()[0]
+data = form_input["json"]["body"]
+
+filled_prompt = get_filled_prompt_template(**data)
+
+return [{"prompt": filled_prompt}]

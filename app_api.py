@@ -1,5 +1,8 @@
 import requests
-from content_input_template import get_filled_prompt_template
+# from content_input_template import get_filled_prompt_template
+import os
+
+apikey = os.environ.get("N8NAPI")
 
 fields = {
     'topic': "Appellate Law in Indiana: A Comprehensive Overview of the Appeals Process and when to hire an attorney",
@@ -26,5 +29,26 @@ fields = {
     ]
 }
 
-filled_prompt = get_filled_prompt_template(**fields)
-print(filled_prompt)
+# filled_prompt = get_filled_prompt_template(**fields)
+headers = {"Content-Type": "application/json",
+           "Authorization": f"token {apikey}"}
+
+api_base_url = "http://localhost:5678/webhook-test/"
+api_endpoint = "66edbec3-dee4-402b-b36c-11fd270265ff"
+api_url = f"http://localhost:5678/webhook-test/{api_endpoint}"
+
+res = requests.post(
+    api_url,
+    json=fields, headers=headers)
+
+"""
+# n8n pyodide code:
+form_input = _input.all().to_py()[0]
+data = form_input["json"]["body"]
+
+template = "some stuff"
+
+return [{"prompt": template}]
+"""
+
+print(res)

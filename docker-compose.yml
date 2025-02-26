@@ -26,6 +26,8 @@ services:
       DB_POSTGRESDB_HOST: postgres
       DB_TYPE: postgresdb
       DB_POSTGRESDB_PASSWORD: password
+      N8N_RUNNERS_ENABLED: 1
+
 
   mongodb:
     image: "mongo:latest"

@@ -26,7 +26,8 @@ fields = {
         "Common Outcomes in Indiana Appeals",
         "Case Studies: Successful Appeals in Indiana",
         "Tips for Navigating the Appeals Process in Indiana",
-    ]
+    ],
+    "recipient_email": "samuel@coherentautomation.com",
 }
 
 # filled_prompt = get_filled_prompt_template(**fields)

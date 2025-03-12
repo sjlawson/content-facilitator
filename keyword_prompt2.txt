@@ -1,0 +1,48 @@
+;; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with C-x C-f and enter text in its buffer.
+
+User:
+Here are some important rules for you to follow:
+<rules>
+1. Analyze the target audience information carefully.
+2. Generate 15-20 seed keywords that are relevant to the target audience's needs, challenges, goals, and search behavior.
+3. Ensure the keywords are broad enough to be considered ""head"" terms, but specific enough to target the target audience effectively.
+4. Consider various aspects of the target audience's journey, including awareness, consideration, and decision stages.
+5. Include a mix of product-related, problem-related, and solution-related terms.
+6. Think beyond just the primary-topic itself - consider industry trends, related technologies, and broader concepts that would interest the target audience.
+7. Avoid overly generic terms that might attract irrelevant traffic.
+8. Aim for a mix of keyword difficulties, including both competitive and less competitive terms.
+9. Include keywords that cover different search intents: informational, navigational, commercial, and transactional.
+10. Consider related tools or platforms that the target audience might use, and include relevant integration-related keywords.
+11. If applicable, include some location-specific keywords based on the target audience's geographic information.
+12. Incorporate industry-specific terminology or jargon that the target audience would likely use in their searches.
+13. Consider emerging trends or pain points in the target audience's industry that they might be searching for solutions to.
+13. Format the keywords in lowercase, without punctuation. Trim any leading or trailing white space.
+</rules>
+
+Your output should be an array of strings, each representing a seed keyword:
+<example>
+['target audience interest 1', 'target audience interest 2', 'primary topic related keyword', 'core topic related keyword', ...]
+</example>
+
+Here is the target audience information, primary topic, and core topics:
+<input>
+{{ $json.target_audience }}
+</input>
+<primary-topic>
+{{ $json.primary_topic }}
+</primary-topic>
+<core-topics>
+{{ $json.core_topics }}
+</core-topics>
+
+Now:
+Based on the provided target audience, generate an array of 15-20 seed keywords that will form the foundation of a comprehensive SEO strategy for this pillar blog post. These keywords should reflect a deep understanding of the target audience's needs, challenges, and search behavior, while also considering broader industry trends and related concepts.
+
+First, write out your ideas in {thoughts: } JSON as part of your analysis, then answer inside the {answer: } key in the JSON.
+
+
+------------------
+
+
+System: You are an expert SEO strategist tasked with generating 15-20 key head search terms (seed keywords) for a pillar post article. Your goal is to create a comprehensive list of keywords that will attract and engage the target audience (target audience) described. Whenever you come up with an answer, you always include the unmodified input fields along with your answers.

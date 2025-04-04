@@ -10,8 +10,8 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=n8n
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB="${POSTGRES_DB}"
+      - POSTGRES_PASSWORD="${POSTGRES_PASSWORD}"
 
   n8n:
     build:
@@ -23,9 +23,9 @@ services:
       - 5678:5678
     command: npx n8n
     environment:
-      DB_POSTGRESDB_HOST: postgres
-      DB_TYPE: postgresdb
-      DB_POSTGRESDB_PASSWORD: password
+      DB_POSTGRESDB_HOST: "${DB_POSTGRESDB_HOST}"
+      DB_TYPE: "${DB_TYPE}"
+      DB_POSTGRESDB_PASSWORD: "${DB_POSTGRESDB_PASSWORD}"
       N8N_RUNNERS_ENABLED: 1
 
 
@@ -35,8 +35,8 @@ services:
       - 27017:27017
       - 8085:8085
     environment:
-      MONGO_INITDB_ROOT_USERNAME: "admin"
-      MONGO_INITDB_ROOT_PASSWORD: "password"
+      MONGO_INITDB_ROOT_USERNAME: "${MONGO_INITDB_ROOT_USERNAME}"
+      MONGO_INITDB_ROOT_PASSWORD: "${MONGO_INITDB_ROOT_PASSWORD}"
     volumes:
       - mongodb_data_container:/data/db
 

@@ -27,7 +27,7 @@ services:
       DB_TYPE: "${DB_TYPE}"
       DB_POSTGRESDB_PASSWORD: "${DB_POSTGRESDB_PASSWORD}"
       N8N_RUNNERS_ENABLED: 1
-
+      N8N_SECURE_COOKIE: false
 
   mongodb:
     image: "mongo:latest"

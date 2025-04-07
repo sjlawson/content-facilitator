@@ -5,8 +5,6 @@ services:
   postgres:
     image: postgres:16-alpine
     restart: unless-stopped
-    networks:
-      - hayes-net
     ports:
       - 5432:5432
     volumes:
@@ -21,9 +19,6 @@ services:
       dockerfile: n8n/.devcontainer/Dockerfile
     volumes:
       - ..:/workspaces:cached
-    networks:
-      - host
-      - hayes-net
     ports:
       - 5678:5678
     command: npx n8n
@@ -36,8 +31,6 @@ services:
 
   mongodb:
     image: "mongo:latest"
-    networks:
-      - hayes-net
     ports:
       - 27017:27017
       - 8085:8085
@@ -50,14 +43,3 @@ services:
 volumes:
   mongodb_data_container:
   postgres-data:
-
-networks:
-  host:
-    name: host
-    external: true
-  hayes-net:
-    driver_opts:
-      com.docker.network.bridge.host_binding_ipv4: "172.20.0.1"
-    ipam:
-      config:
-        - subnet: "172.20.0.0/16"

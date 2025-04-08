@@ -18,7 +18,7 @@ services:
     volumes:
       - ..:/workspaces:cached
     ports:
-      - 5678:5678
+      - 443:5678
     links:
       - mongodb
       - postgres
